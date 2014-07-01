@@ -15,7 +15,8 @@ var getElementsByClassName = function (className) {
 
        var list = node.classList
 
-       //if node is  a non zero array or not undefined, implement the following
+       //if node is  a non zero array or not undefined, 
+       //implement the following
 
        if(node.length){
 
@@ -23,7 +24,8 @@ var getElementsByClassName = function (className) {
 
           for(var i=0; i<node.length; i++){
 
-            //check to see if any of the classes in each node is undefined. If not, use recusion loop through the process again. 
+            //check to see if any of the classes in each node is
+            //undefined. If not, use recusion loop through the process again. 
             if(node[i].classList!==undefined){
 
                    getClass(node[i])
@@ -37,14 +39,18 @@ var getElementsByClassName = function (className) {
 
            if(list){
 
-                //check to see if your target className is in your node class list. If it is, push your node to result.We have found what we are looking for. 
+                //check to see if your target className is in your node class
+                //list. If it is, push your node to result.We have found what
+                // we are looking for. 
 
                 if(list.contains(className)){
 
                      result.push(node)
 
                 }
-                // if target className is not in node class list. Than use recursion but break it down further by inputing the child node of the current node. 
+                // if target className is not in node class list. Than 
+                //use recursion but break it down further by inputing 
+                //the child node of the current node. 
       
 
                 getClass(node.childNodes)             
@@ -54,7 +60,9 @@ var getElementsByClassName = function (className) {
       }
    }
 
-       //initiate the process with document.body.We want to start off with body and let the recursion run until we find our target className. If we can't find it, we just return an empty array. 
+       //initiate the process with document.body.We want to start off with
+       // body and let the recursion run until we find our target className.
+       // If we can't find it, we just return an empty array. 
        getClass(document.body)
         return result;
 
