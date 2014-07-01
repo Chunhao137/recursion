@@ -25,17 +25,13 @@ var getElementsByClassName = function (className) {
           for(var i=0; i<node.length; i++){
 
             //check to see if any of the classes in each node is
-            //undefined. If not, use recusion loop through the process again. 
+            //undefined. If not, use recusion to loop through the process again. 
             if(node[i].classList!==undefined){
 
                    getClass(node[i])
-
-             }
-
-          }
-       }
-
-       else{
+              }
+           }
+       }  else{
 
            if(list){
 
@@ -54,18 +50,13 @@ var getElementsByClassName = function (className) {
       
 
                 getClass(node.childNodes)             
-
            }
         }
       }
    }
-
-       //initiate the process with document.body.We want to start off with
+      //initiate the process with document.body.We want to start off with
        // body and let the recursion run until we find our target className.
        // If we can't find it, we just return an empty array. 
        getClass(document.body)
-        return result;
-
-    
-      
+        return result;      
 };
